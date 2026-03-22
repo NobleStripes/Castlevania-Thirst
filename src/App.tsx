@@ -209,6 +209,8 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
     // At that point the fandom was not the problem — the production staff started it.
     // This description is merely bearing witness.
     // The same official Nocturne animator then drew her as a cowgirl (brown hat, turquoise brooch, corset).
+    // And then as Elvira: Mistress of the Dark. Long blonde hair, black dress, reclining against the
+    // Castlevania: Nocturne logo. Official promotional energy. Zero ambiguity about intent.
     // This is no longer a fandom problem. This is a production culture.
     description: 'The Speaker mother who literally broke the internet. Powerful, protective, and the ultimate MILF.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/b/bf/Tera_%28animated_series%29_-_01.png/revision/latest?cb=20230928204734',
