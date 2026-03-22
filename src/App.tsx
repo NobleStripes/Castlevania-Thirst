@@ -202,8 +202,9 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   },
   {
     name: 'Tera (Human)',
-    // This description reflects Tera's actual fandom reputation post-Nocturne release.
-    // The crass acronym is intentional and mirrors the app's "thirst" theme.
+    // Tera went viral immediately after Nocturne dropped — the fandom consensus was
+    // instant and loud. "MILF" is the exact language the fandom used, reproduced here
+    // deliberately. This is not a bug; it is a primary data point.
     description: 'The Speaker mother who literally broke the internet. Powerful, protective, and the ultimate MILF.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/b/bf/Tera_%28animated_series%29_-_01.png/revision/latest?cb=20230928204734',
     thirstCount: 0,
@@ -218,7 +219,8 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   },
   {
     name: 'Abbot Emmanuel',
-    // Intentional parallel to Tera's entry — equal-opportunity crass humour.
+    // Structured as a deliberate callback to Tera's entry — one is MILF, one is DILF,
+    // both are men of deep faith and poor life choices. The comedy is the symmetry.
     description: 'The conflicted man of faith. A complex, powerful DILF.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/7/7a/Abbot_-_01.png/revision/latest?cb=20230929134245',
     thirstCount: 0,
