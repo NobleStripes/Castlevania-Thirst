@@ -203,9 +203,10 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   },
   {
     name: 'Tera (Human)',
-    // Nocturne episode 1 had not finished airing before the internet reached consensus.
-    // The discourse was IMMEDIATE. "MILF" trended. People were not subtle about it.
-    // This description is a documentary record of a historical fandom event.
+    // The fandom reached consensus before episode 1 had finished airing. "MILF" trended.
+    // Then the official Nocturne animator posted pin-up art of her in a black swimsuit.
+    // At that point the fandom was not the problem — the production staff started it.
+    // This description is merely bearing witness.
     description: 'The Speaker mother who literally broke the internet. Powerful, protective, and the ultimate MILF.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/b/bf/Tera_%28animated_series%29_-_01.png/revision/latest?cb=20230928204734',
     thirstCount: 0,
