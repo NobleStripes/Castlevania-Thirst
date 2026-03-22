@@ -212,6 +212,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
     // And then as Elvira: Mistress of the Dark. Long blonde hair, black dress, reclining against the
     // Castlevania: Nocturne logo. Official promotional energy. Zero ambiguity about intent.
     // This is no longer a fandom problem. This is a production culture.
+    // The fandom also ships her with Emmanuel. MILF + DILF. See: Abbot Emmanuel entry.
     description: 'The Speaker mother who literally broke the internet. Powerful, protective, and the ultimate MILF.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/b/bf/Tera_%28animated_series%29_-_01.png/revision/latest?cb=20230928204734',
     thirstCount: 0,
@@ -229,6 +230,8 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
     // God's most embarrassing servant. He has a crisis of faith, enables a vampire
     // apocalypse, and somehow still manages to be incredibly hot while doing it.
     // The fandom did not miss this. The fandom never misses.
+    // The fandom also ships him with Tera. MILF + DILF. Two consenting adults with
+    // tragic backstories and excellent bone structure. Honestly? Good for them.
     description: 'The conflicted man of faith. A complex, powerful DILF.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/7/7a/Abbot_-_01.png/revision/latest?cb=20230929134245',
     thirstCount: 0,
