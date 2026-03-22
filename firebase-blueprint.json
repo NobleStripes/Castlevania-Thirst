@@ -1,0 +1,37 @@
+{
+  "entities": {
+    "Character": {
+      "title": "Character",
+      "description": "A Castlevania character with a thirst count.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "The character's name." },
+        "thirstCount": { "type": "number", "description": "Total number of thirst votes." },
+        "imageUrl": { "type": "string", "description": "URL to the character's image." },
+        "description": { "type": "string", "description": "Brief description of why they are thirsty." }
+      },
+      "required": ["name", "thirstCount"]
+    },
+    "Vote": {
+      "title": "Vote",
+      "description": "A record of a user's vote to prevent spam.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "The ID of the user who voted." },
+        "characterId": { "type": "string", "description": "The ID of the character voted for." },
+        "timestamp": { "type": "string", "format": "date-time", "description": "When the vote happened." }
+      },
+      "required": ["userId", "characterId", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/characters": {
+      "schema": "Character",
+      "description": "Collection of Castlevania characters."
+    },
+    "/votes/{voteId}": {
+      "schema": "Vote",
+      "description": "Tracking votes to enforce one vote per user per character (or similar logic)."
+    }
+  }
+}

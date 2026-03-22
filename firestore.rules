@@ -1,0 +1,82 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: characters
+    // Document ID: characterId
+    // Fields:
+    //   - name: string (required)
+    //   - thirstCount: number (required, >= 0)
+    //   - imageUrl: string (optional)
+    //   - description: string (optional)
+    //
+    // Collection: votes
+    // Document ID: userId_characterId
+    // Fields:
+    //   - userId: string (required)
+    //   - characterId: string (required)
+    //   - timestamp: timestamp (required)
+    //
+    // ===============================================================
+
+    // Helper Functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function hasOnlyAllowedFields(fields) {
+      return request.resource.data.keys().hasOnly(fields);
+    }
+
+    function isValidCharacter(data) {
+      return data.name is string && 
+             data.name.size() > 0 && data.name.size() < 100 &&
+             data.thirstCount is number && data.thirstCount >= 0 &&
+             (!('imageUrl' in data) || data.imageUrl is string) &&
+             (!('description' in data) || data.description is string);
+    }
+
+    function isValidVote(data, voteId) {
+      let expectedId = request.auth.uid + "_" + data.characterId;
+      return data.userId == request.auth.uid &&
+             data.characterId is string &&
+             data.timestamp is timestamp &&
+             voteId == expectedId;
+    }
+
+    // Rules
+    match /characters/{characterId} {
+      allow read: if true; // Publicly readable
+      
+      // Admin can do anything, others can only increment thirstCount
+      allow update: if (isAuthenticated() && 
+                        (request.auth.token.email == "godianeby413@gmail.com" && request.auth.token.email_verified == true)) ||
+                    (isAuthenticated() &&
+                     request.resource.data.diff(resource.data).affectedKeys().hasOnly(['thirstCount']) &&
+                     request.resource.data.thirstCount == resource.data.thirstCount + 1 &&
+                     // Ensure a vote document is being created in the same batch
+                     getAfter(/databases/$(database)/documents/votes/$(request.auth.uid + "_" + characterId)) != null);
+      
+      // Admin only (bootstrapped)
+      allow create, delete: if isAuthenticated() && 
+                            (request.auth.token.email == "godianeby413@gmail.com" && request.auth.token.email_verified == true);
+    }
+
+    match /votes/{voteId} {
+      allow read: if isAuthenticated() && (isOwner(voteId.split('_')[0]) || (request.auth.token.email == "godianeby413@gmail.com" && request.auth.token.email_verified == true));
+      allow create: if isAuthenticated() && isValidVote(request.resource.data, voteId) && !exists(/databases/$(database)/documents/votes/$(voteId));
+      allow update, delete: if false; // Votes are permanent for now
+    }
+
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+    }
+  }
+}
