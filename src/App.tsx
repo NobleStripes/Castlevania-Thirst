@@ -48,9 +48,10 @@ const getProxiedUrl = (url: string) => {
  * The document ID for each character is derived from its name (lowercase, hyphenated).
  * thirstCount is always initialised to 0 here; the real count lives in Firestore.
  *
- * Note: descriptions are intentionally written in the voice of an over-invested
- * Castlevania fan. The irreverence and internet slang are deliberate — do not
- * "fix" them to be more formal.
+ * The descriptions below were written at 2am by someone who has seen every episode
+ * at least twice and has Opinions. Do not "improve" them. They are already perfect.
+ * If you are a future developer who finds this unprofessional: this app is called
+ * Castlevania Thirst. You knew what you were getting into.
  */
 const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
@@ -98,7 +99,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   },
   {
     name: 'Striga',
-    // "absolute unit" — internet slang for someone impressively large and powerful. Entirely accurate.
+    // She could snap you in half and you would thank her. "Absolute unit" does not begin to cover it.
     description: 'The warrior sister. An absolute unit in Day Armor.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/f/fb/Striga_-_01.jpg/revision/latest?cb=20200307113743',
     thirstCount: 0,
@@ -106,8 +107,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   },
   {
     name: 'Isaac',
-    // "philosophical murder" is an intentional oxymoron — Isaac spends the series debating
-    // the nature of humanity while methodically slaughtering people. Both things are true.
+    // He reads Nietzsche. He also kills everyone. These are not separate activities for him.
     description: 'The forgemaster on a journey of self-discovery and philosophical murder.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/3/3d/Isaac1jpg.png/revision/latest?cb=20181026190553',
     thirstCount: 0,
@@ -115,8 +115,8 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   },
   {
     name: 'Hector',
-    // Hector's canonical power is raising dead animals as night creature companions.
-    // "a few pets" is technically accurate and intentionally wholesome-sounding.
+    // His entire arc is getting manipulated by every woman he meets because he is
+    // too emotionally starved to say no. The pets are the only ones who truly love him back.
     description: 'The forgemaster who just wanted to be loved (and maybe a few pets).',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/b/b9/Hector_(animated_series)_-_01.jpg/revision/latest?cb=20180806085342',
     thirstCount: 0,
@@ -131,7 +131,8 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   },
   {
     name: 'Godbrand',
-    // Intentional comedic reduction of a recurring antagonist to his three most prominent traits.
+    // Godbrand has the emotional range of a golden retriever who has been given the power
+    // to drain the living. He is delighted about boats every single time. Icon.
     description: 'The Viking vampire. He likes boats, blood, and being incredibly loud.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/6/65/Godbrand_-_02.jpg/revision/latest?cb=20180909111559',
     thirstCount: 0,
@@ -202,9 +203,9 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   },
   {
     name: 'Tera (Human)',
-    // Tera went viral immediately after Nocturne dropped — the fandom consensus was
-    // instant and loud. "MILF" is the exact language the fandom used, reproduced here
-    // deliberately. This is not a bug; it is a primary data point.
+    // Nocturne episode 1 had not finished airing before the internet reached consensus.
+    // The discourse was IMMEDIATE. "MILF" trended. People were not subtle about it.
+    // This description is a documentary record of a historical fandom event.
     description: 'The Speaker mother who literally broke the internet. Powerful, protective, and the ultimate MILF.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/b/bf/Tera_%28animated_series%29_-_01.png/revision/latest?cb=20230928204734',
     thirstCount: 0,
@@ -219,8 +220,9 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   },
   {
     name: 'Abbot Emmanuel',
-    // Structured as a deliberate callback to Tera's entry — one is MILF, one is DILF,
-    // both are men of deep faith and poor life choices. The comedy is the symmetry.
+    // God's most embarrassing servant. He has a crisis of faith, enables a vampire
+    // apocalypse, and somehow still manages to be incredibly hot while doing it.
+    // The fandom did not miss this. The fandom never misses.
     description: 'The conflicted man of faith. A complex, powerful DILF.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/7/7a/Abbot_-_01.png/revision/latest?cb=20230929134245',
     thirstCount: 0,
@@ -263,7 +265,8 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   },
   {
     name: 'Alucard (Nocturne)',
-    // Callbacks to the original Alucard entry ("perfect hair"). The vanity is the joke.
+    // Several centuries old. Has watched empires collapse. Still checking his reflection.
+    // (Trick question — he has no reflection. He just stands where one would be and assumes.)
     description: 'The legendary dhampir returns. Older, wiser, and still incredibly handsome.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/3/3a/Alucard_%28animated_series%29_-_04.png/revision/latest?cb=20231003170421',
     thirstCount: 0,
@@ -584,7 +587,7 @@ export default function App() {
         {loading ? (
           <div className="flex flex-col items-center justify-center py-20 gap-4">
             <div className="w-12 h-12 border-4 border-red-600 border-t-transparent rounded-full animate-spin" />
-            {/* Thematic flavour text instead of a generic "Loading..." */}
+            {/* "Loading the crypt..." because "Loading..." is for apps that don't have vampires. */}
             <p className="text-gray-500 animate-pulse uppercase tracking-widest text-sm">Loading the crypt...</p>
           </div>
         ) : error ? (
@@ -688,7 +691,7 @@ export default function App() {
                       )}
                     >
                       <Heart className={cn("w-5 h-5", userVotes.has(char.id) ? "fill-gray-600" : "fill-transparent group-hover:fill-white")} />
-                      {/* "Thirst" is the comedic punchline — the primary action is named after the slang the whole app satirises. */}
+                      {/* The entire app exists to justify this button label. Everything else is scaffolding. */}
                       {userVotes.has(char.id) ? "Voted" : "Thirst"}
                     </button>
                   </div>
@@ -842,10 +845,10 @@ export default function App() {
 
       {/* Footer */}
       <footer className="mt-20 py-12 border-t border-white/5 text-center text-gray-600 text-sm">
-        {/* "Night Creatures Anonymous" — a deliberate AA meeting reference for the undead. */}
+        {/* Hi, I'm a night creature, and it's been zero days since I last voted on a thirst poll. */}
         <p className="mb-2">© 2026 Night Creatures Anonymous</p>
-        {/* Parody of the iconic Dracula quote from the original 1989 Castlevania game:
-            "What is a man? A miserable little pile of secrets!" — the one word swap is the whole joke. */}
+        {/* Original quote, Dracula (1989): "What is a man? A miserable little pile of secrets!"
+            This app has one job and it is ruining that quote on purpose. Mission accomplished. */}
         <p className="italic">"What is a man? A miserable little pile of thirst."</p>
       </footer>
     </div>
