@@ -1,5 +1,5 @@
 {
-  "name": "Castlevania Thirst Counter",
-  "description": "A gothic-themed real-time counter for your favorite Netflix Castlevania characters.",
+  "name": "Castlevania Thirst",
+  "description": "A gothic-themed real-time thirst tracker for your favorite Netflix Castlevania characters.",
   "requestFramePermissions": []
 }

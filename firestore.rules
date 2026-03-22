@@ -12,6 +12,7 @@ service cloud.firestore {
     //   - thirstCount: number (required, >= 0)
     //   - imageUrl: string (optional)
     //   - description: string (optional)
+    //   - series: string (required, one of ['original', 'nocturne', 'tera-thirst'])
     //
     // Collection: votes
     // Document ID: userId_characterId
@@ -39,6 +40,7 @@ service cloud.firestore {
       return data.name is string && 
              data.name.size() > 0 && data.name.size() < 100 &&
              data.thirstCount is number && data.thirstCount >= 0 &&
+             data.series in ['original', 'nocturne', 'tera-thirst'] &&
              (!('imageUrl' in data) || data.imageUrl is string) &&
              (!('description' in data) || data.description is string);
     }
