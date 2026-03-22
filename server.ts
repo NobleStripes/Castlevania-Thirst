@@ -11,8 +11,13 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
-  // API Proxy for Images
-  // This bypasses hotlinking blocks by fetching the image on the server
+  /**
+   * GET /api/proxy-image?url=<encoded-url>
+   * Server-side image proxy. Fetches the remote image using a browser-like
+   * User-Agent to bypass hotlinking restrictions (e.g. Wikia) that block
+   * direct browser requests. Streams the image body to the client and caches
+   * the response for 24 hours.
+   */
   app.get("/api/proxy-image", async (req, res) => {
     const imageUrl = req.query.url as string;
     if (!imageUrl) {
@@ -65,7 +70,13 @@ async function startServer() {
     }
   });
 
-  // Image Validation Endpoint
+  /**
+   * GET /api/validate-image?url=<encoded-url>
+   * Checks whether a URL points to a supported image before it is saved.
+   * Uses a HEAD request to avoid downloading the full image body.
+   * Returns JSON: { valid: boolean, error?: string }
+   * Accepted MIME types: JPEG, PNG, GIF, WebP, SVG, AVIF.
+   */
   app.get("/api/validate-image", async (req, res) => {
     const imageUrl = req.query.url as string;
     if (!imageUrl) {
@@ -98,7 +109,9 @@ async function startServer() {
     }
   });
 
-  // Vite middleware for development
+  // In development, delegate all non-API requests to Vite's dev server so
+  // HMR and module serving work correctly. In production, serve the built
+  // static files from dist/ and fall back to index.html for client-side routing.
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
       server: { middlewareMode: true },

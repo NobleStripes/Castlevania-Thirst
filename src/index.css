@@ -7,6 +7,8 @@
   --font-display: "Space Grotesk", sans-serif;
 }
 
+/* Used on the image validation error banner in the admin modal to draw attention
+   to the error message without relying solely on colour. Plays twice, quickly. */
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(-4px); }

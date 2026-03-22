@@ -19,22 +19,35 @@ import { cn } from './lib/utils';
 import { Heart, LogIn, LogOut, ShieldAlert, Zap, Flame, Skull, Plus, Edit, Trash2, X, Upload, Save } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-// Character type
+/** Represents a votable character stored in Firestore. */
 interface Character {
   id: string;
   name: string;
+  /** Total number of votes this character has received. */
   thirstCount: number;
   imageUrl: string;
   description: string;
+  /** CSS object-position value for image focal point (e.g. 'top', 'center'). Defaults to 'center'. */
   objectPosition?: string;
+  /** Which Netflix series the character appears in — used for the tab filter. */
   series: 'original' | 'nocturne';
 }
 
+/**
+ * Routes character image requests through the server-side proxy to bypass
+ * hotlinking restrictions on external image hosts (e.g. Wikia).
+ * Base64 data URLs (uploaded images) are returned as-is.
+ */
 const getProxiedUrl = (url: string) => {
   if (!url || url.startsWith('data:')) return url;
   return `/api/proxy-image?url=${encodeURIComponent(url)}`;
 };
 
+/**
+ * Canonical list of characters used to seed or reset the Firestore database.
+ * The document ID for each character is derived from its name (lowercase, hyphenated).
+ * thirstCount is always initialised to 0 here; the real count lives in Firestore.
+ */
 const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Alucard',
@@ -244,19 +257,21 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
 
 export default function App() {
   const [user] = useAuthState(auth);
-  const [characters, setCharacters] = useState<Character[]>([]);
-  const [activeTab, setActiveTab] = useState<'original' | 'nocturne'>('original');
-  const [userVotes, setUserVotes] = useState<Set<string>>(new Set());
+  const [characters, setCharacters] = useState<Character[]>([]); // All characters from Firestore, sorted by thirstCount desc
+  const [activeTab, setActiveTab] = useState<'original' | 'nocturne'>('original'); // Currently visible series tab
+  const [userVotes, setUserVotes] = useState<Set<string>>(new Set()); // Character IDs the current user has already voted for
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [editingCharacter, setEditingCharacter] = useState<Partial<Character> | null>(null);
-  const [isSaving, setIsSaving] = useState(false);
-  const [validationError, setValidationError] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Controls the admin add/edit modal
+  const [editingCharacter, setEditingCharacter] = useState<Partial<Character> | null>(null); // Character being created or edited
+  const [isSaving, setIsSaving] = useState(false); // Prevents double-submit while saving a character
+  const [validationError, setValidationError] = useState<string | null>(null); // Image validation error shown in the modal
 
+  // Admin access is restricted to a single hardcoded email address.
   const isAdmin = user?.email === 'godianeby413@gmail.com';
 
-  // Sync characters from Firestore
+  // Subscribe to real-time character updates from Firestore.
+  // The query orders by thirstCount so the grid always reflects live rankings.
   useEffect(() => {
     const q = query(collection(db, 'characters'), orderBy('thirstCount', 'desc'));
     const unsubscribe = onSnapshot(q, (snapshot) => {
@@ -275,7 +290,10 @@ export default function App() {
     return () => unsubscribe();
   }, []);
 
-  // Sync user's votes to prevent double-voting in UI
+  // Track which characters the current user has already voted for.
+  // Vote documents use the composite key `{userId}_{characterId}`, so we can
+  // filter the entire votes collection client-side without an extra index.
+  // Clears votes when the user signs out.
   useEffect(() => {
     if (!user) {
       setUserVotes(new Set());
@@ -297,6 +315,13 @@ export default function App() {
     return () => unsubscribe();
   }, [user]);
 
+  /**
+   * Records a vote for the given character.
+   * Uses a Firestore batch write to atomically:
+   *   1. Increment the character's thirstCount
+   *   2. Create a vote document at `votes/{userId}_{characterId}` (acts as a unique constraint)
+   * Prompts sign-in if the user is not authenticated.
+   */
   const handleVote = async (characterId: string) => {
     if (!user) {
       signIn();
@@ -321,6 +346,12 @@ export default function App() {
     }
   };
 
+  /**
+   * Admin-only: syncs INITIAL_CHARACTERS into Firestore.
+   * Uses merge:true so existing thirstCounts are preserved.
+   * Characters that exist in Firestore but are absent from INITIAL_CHARACTERS are deleted,
+   * keeping the database in sync with the canonical list.
+   */
   const seedDatabase = async () => {
     if (!isAdmin) return;
     try {
@@ -356,6 +387,12 @@ export default function App() {
     }
   };
 
+  /**
+   * Admin-only: saves (create or update) a character to Firestore.
+   * Validates the image URL via the server before writing, unless it is a
+   * locally-uploaded base64 data URL (which requires no remote check).
+   * The document ID is derived from the character name when creating a new record.
+   */
   const handleSaveCharacter = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!isAdmin || !editingCharacter) return;
@@ -398,6 +435,7 @@ export default function App() {
     }
   };
 
+  /** Admin-only: permanently removes a character document from Firestore. */
   const handleDeleteCharacter = async (id: string) => {
     if (!isAdmin) return;
     try {
@@ -407,6 +445,11 @@ export default function App() {
     }
   };
 
+  /**
+   * Converts a locally selected image file into a base64 data URL and stores it
+   * in editingCharacter.imageUrl. Data URLs bypass the proxy and validation
+   * endpoints since the image is already client-side.
+   */
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -582,6 +625,8 @@ export default function App() {
                       referrerPolicy="no-referrer"
                       style={{ objectPosition: char.objectPosition || 'center' }}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[0.3] group-hover:grayscale-0"
+                      // If the proxied image fails to load, fall back to a
+                      // seeded placeholder from Picsum so the card still renders.
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         if (!target.src.includes('blur=5')) {
