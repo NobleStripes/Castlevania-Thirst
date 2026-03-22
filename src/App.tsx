@@ -208,6 +208,8 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
     // Center frame. Pin-up pose. Generous bust. Richter and Annette got chibi heads in the corner.
     // At that point the fandom was not the problem — the production staff started it.
     // This description is merely bearing witness.
+    // Fan artists subsequently rendered her as: a cowgirl (brown hat, turquoise brooch, corset).
+    // The corset stays on in the desert. Obviously.
     description: 'The Speaker mother who literally broke the internet. Powerful, protective, and the ultimate MILF.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/b/bf/Tera_%28animated_series%29_-_01.png/revision/latest?cb=20230928204734',
     thirstCount: 0,
