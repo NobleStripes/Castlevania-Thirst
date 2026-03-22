@@ -205,6 +205,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
     name: 'Tera (Human)',
     // The fandom reached consensus before episode 1 had finished airing. "MILF" trended.
     // Then the official Nocturne animator posted pin-up art of her in a black swimsuit.
+    // Center frame. Pin-up pose. Generous bust. Richter and Maria got chibi heads in the corner.
     // At that point the fandom was not the problem — the production staff started it.
     // This description is merely bearing witness.
     description: 'The Speaker mother who literally broke the internet. Powerful, protective, and the ultimate MILF.',
