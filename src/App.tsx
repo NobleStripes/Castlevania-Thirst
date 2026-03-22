@@ -232,6 +232,13 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/8/8a/Juste_Belmont_%28animated_series%29_-_01.png/revision/latest?cb=20231001030823',
     thirstCount: 0,
     series: 'nocturne'
+  },
+  {
+    name: 'Alucard (Nocturne)',
+    description: 'The legendary dhampir returns. Older, wiser, and still incredibly handsome.',
+    imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/3/3a/Alucard_%28animated_series%29_-_04.png/revision/latest?cb=20231003170421',
+    thirstCount: 0,
+    series: 'nocturne'
   }
 ];
 
