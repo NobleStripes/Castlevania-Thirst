@@ -116,7 +116,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   },
   {
     name: 'Lisa Tepes',
-    description: 'The woman who humanized Dracula. A doctor of science and kindness.',
+    description: 'The woman who humanized Dracula. A doctor of science, kindness, and absolute motherly grace. 10/10 would start a genocide for her.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/d/d3/Lisa%27s_faceshot.png/revision/latest?cb=20181226040928',
     thirstCount: 0,
     series: 'original'
@@ -179,7 +179,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   },
   {
     name: 'Tera (Human)',
-    description: 'The Speaker mother who literally broke the internet. Powerful, protective, and the ultimate MILF.',
+    description: 'The Speaker mother who literally broke the internet. Powerful, protective, and the ultimate MILF. Motherhood supremacy starts here.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/b/bf/Tera_%28animated_series%29_-_01.png/revision/latest?cb=20230928204734',
     thirstCount: 0,
     series: 'nocturne'
@@ -221,7 +221,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   },
   {
     name: 'Julia Belmont',
-    description: 'The mother of Richter. A powerful Belmont who fought to the end.',
+    description: 'The mother of Richter. A powerful Belmont who fought to the end. The ultimate warrior mom. Thirst levels: Legendary.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/f/f0/Julia_Belmont.png/revision/latest?cb=20230929004249',
     thirstCount: 0,
     series: 'nocturne'
@@ -237,6 +237,13 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
     name: 'Alucard (Nocturne)',
     description: 'The legendary dhampir returns. Older, wiser, and still incredibly handsome.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/3/3a/Alucard_%28animated_series%29_-_04.png/revision/latest?cb=20231003170421',
+    thirstCount: 0,
+    series: 'nocturne'
+  },
+  {
+    name: 'Tera (Pin-up)',
+    description: 'Bonus thirst 200%. The Speaker mother in her legendary summer attire. Art by @rynplais.',
+    imageUrl: 'https://pbs.twimg.com/media/F8L_8S8X0AA9v9T?format=jpg&name=large',
     thirstCount: 0,
     series: 'nocturne'
   }
@@ -570,8 +577,16 @@ export default function App() {
                   )}
 
                   {/* Rank Badge */}
-                  <div className="absolute top-4 left-4 z-10 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-xs font-bold text-gray-300">
-                    #{index + 1}
+                  <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
+                    <div className="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-xs font-bold text-gray-300 w-fit">
+                      #{index + 1}
+                    </div>
+                    {(char.name.includes('Lisa') || char.name.includes('Tera') || char.name.includes('Julia')) && (
+                      <div className="bg-red-600/80 backdrop-blur-md px-3 py-1 rounded-full border border-red-400/30 text-[10px] font-black text-white uppercase tracking-tighter w-fit flex items-center gap-1">
+                        <Heart className="w-3 h-3 fill-current" />
+                        MILF Council Certified
+                      </div>
+                    )}
                   </div>
 
                   {/* Image Container */}
