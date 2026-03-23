@@ -16,7 +16,7 @@ Are you a simp for Alucard? A devotee of Trevor's stubble? Or perhaps you're her
 
 We recognize the absolute power of the mothers in this franchise:
 - **Lisa Tepes**: The woman who humanized Dracula. A doctor, a scholar, and the reason the world didn't end (eventually). 10/10 would start a genocide for her.
-- **Tera**: The Speaker mother who literally broke the internet. Whether she's human or... *otherwise*, the thirst remains eternal. 
+- **Tera Renard**: The Speaker mother who literally broke the internet. Whether she's human or... *otherwise*, the thirst remains eternal. Confirmed by the official artbook to share Maria's last name.
 - **Julia Belmont**: The ultimate warrior mom. She fought a vampire messiah's priest to protect her son. Absolute legend.
 
 ## 🛠️ Tech Stack

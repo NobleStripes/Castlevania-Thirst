@@ -178,14 +178,14 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
     series: 'nocturne'
   },
   {
-    name: 'Tera (Human)',
+    name: 'Tera Renard (Human)',
     description: 'The Speaker mother who literally broke the internet. Powerful, protective, and the ultimate MILF. Motherhood supremacy starts here.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/b/bf/Tera_%28animated_series%29_-_01.png/revision/latest?cb=20230928204734',
     thirstCount: 0,
     series: 'nocturne'
   },
   {
-    name: 'Tera (Vampire)',
+    name: 'Tera Renard (Vampire)',
     description: 'The tragic sacrifice. Even in her dark transformation, she remains a fan favorite.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/f/fe/Vampier_Tera.png/revision/latest?cb=20250125152046',
     thirstCount: 0,
@@ -241,7 +241,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
     series: 'nocturne'
   },
   {
-    name: 'Tera (Pin-up)',
+    name: 'Tera Renard (Pin-up)',
     description: 'Bonus thirst 200%. The Speaker mother in her legendary summer attire. Art by @rynplais.',
     imageUrl: 'https://pbs.twimg.com/media/F8L_8S8X0AA9v9T?format=jpg&name=large',
     thirstCount: 0,
