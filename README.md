@@ -12,12 +12,17 @@ Are you a simp for Alucard? A devotee of Trevor's stubble? Or perhaps you're her
 - **Vampire-Approved**: Tested by a council of ancient vampires who found it "mildly amusing before they tried to eat the developer."
 - **Zero Holy Water**: This app is 100% safe for vampires, dhampirs, and speakers. (Belmonts use at your own risk, we know you're just here for the beer).
 
-## 🤱 The MILF Corner (User Requested™)
+## 🤱 THE MILF CORNER (USER REQUESTED™ & ABSOLUTELY UNHINGED) 🤱
 
-We recognize the absolute power of the mothers in this franchise:
-- **Lisa Tepes**: The woman who humanized Dracula. A doctor, a scholar, and the reason the world didn't end (eventually). 10/10 would start a genocide for her.
-- **Tera Renard**: The Speaker mother who literally broke the internet. Whether she's human or... *otherwise*, the thirst remains eternal. Confirmed by the official artbook to share Maria's last name.
-- **Julia Belmont**: The ultimate warrior mom. She fought a vampire messiah's priest to protect her son. Absolute legend.
+**⚠️ WARNING: EXTREME LEVELS OF MATERNAL SUPREMACY DETECTED. PROCEED WITH CAUTION OR PREPARE TO BE ADOPTED.**
+
+We have officially surrendered to the absolute, reality-shattering power of the mothers in this franchise. The MILF Council has convened, and the verdict is: **WE ARE ALL SIMPS.**
+
+- **🧬 Lisa Tepes (The Catalyst of Chaos)**: The woman who humanized the King of Vampires. A doctor, a scholar, and the literal reason the world almost ended. If your wife doesn't inspire you to commit global genocide, is she even your wife? 10/10 would let her experiment on my soul. **MOTHERHOOD SUPREMACY INCARNATE.**
+- **🔥 Tera Renard (The Internet-Breaker)**: The Speaker mother who caused a worldwide server outage the moment she appeared on screen. Human? Vampire? Doesn't matter. We are all just moths to her divine, protective flame. The official artbook confirms she's a Renard, but the fandom confirms she's **THE MOMMY OF ALL MOMMIES.**
+- **⚔️ Julia Belmont (The Legendary Warrior Mom)**: She didn't just fight a vampire messiah's priest; she did it while being a peak Belmont. The ultimate "I'm not mad, I'm just disappointed" energy, except the disappointment comes with a whip and holy magic. **LEGENDARY THIRST LEVELS: CRITICAL.**
+
+*Note: If you find yourself suddenly wanting to clean your room or eat your vegetables after reading this, that's just the MILF energy radiating through the screen. Embrace it.*
 
 ## 🛠️ Tech Stack
 
@@ -42,14 +47,6 @@ We recognize the absolute power of the mothers in this franchise:
    npm run dev
    ```
 4. **Open your browser** to `http://localhost:3000` and prepare to witness the thirst.
-
-## 🔒 Environment Variables
-
-To keep your crypt secure, copy `.env.example` to `.env` and fill in your Firebase credentials:
-```bash
-cp .env.example .env
-```
-The application uses `VITE_` prefixed variables to ensure they are accessible in the client-side code.
 
 ## 📜 License
 

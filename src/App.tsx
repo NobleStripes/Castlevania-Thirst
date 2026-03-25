@@ -577,7 +577,7 @@ export default function App() {
                     {(char.name.includes('Lisa') || char.name.includes('Tera') || char.name.includes('Julia')) && (
                       <div className="bg-red-600/80 backdrop-blur-md px-3 py-1 rounded-full border border-red-400/30 text-[10px] font-black text-white uppercase tracking-tighter w-fit flex items-center gap-1">
                         <Heart className="w-3 h-3 fill-current" />
-                        MILF Council Certified
+                        MILF SUPREMACY: ABSOLUTE
                       </div>
                     )}
                   </div>
