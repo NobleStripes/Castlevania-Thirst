@@ -7,7 +7,7 @@ Are you a simp for Alucard? A devotee of Trevor's stubble? Or perhaps you're her
 ## 🦇 Features
 
 - **Real-Time Dehydration**: Watch the thirst levels rise in real-time. It's like a stock market, but instead of money, it's just pure, unadulterated longing.
-- **The MILF Council**: Dedicated tracking for the absolute legends **Lisa Tepes** and **Tera**. Because let's be honest, they carry the emotional weight (and the thirst) of the entire series.
+- **The MILF Council**: Dedicated tracking for the absolute legends **Lisa Tepes**, **Tera**, and **Julia Belmont**. Because let's be honest, they carry the emotional weight (and the thirst) of the entire series.
 - **Gothic Aesthetics**: Styled with Tailwind CSS so sharp it could kill a night creature.
 - **Vampire-Approved**: Tested by a council of ancient vampires who found it "mildly amusing before they tried to eat the developer."
 - **Zero Holy Water**: This app is 100% safe for vampires, dhampirs, and speakers. (Belmonts use at your own risk, we know you're just here for the beer).
@@ -54,4 +54,4 @@ Licensed under the **Dracula's Curse License**. You are free to use this code, b
 
 ---
 
-*Disclaimer: No Belmonts were harmed in the making of this app. One night creature was slightly inconvenienced. Lisa and Tera are best girls.*
+*Disclaimer: No Belmonts were harmed in the making of this app. One night creature was slightly inconvenienced. Lisa, Tera, and Julia are best girls.*
