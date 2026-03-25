@@ -16,7 +16,7 @@ import {
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { db, auth, signIn, logOut } from './firebase';
 import { cn } from './lib/utils';
-import { Heart, LogIn, LogOut, ShieldAlert, Zap, Flame, Skull, Plus, Edit, Trash2, X, Upload, Save } from 'lucide-react';
+import { Heart, LogIn, LogOut, ShieldAlert, Zap, Flame, Skull, Plus, Edit, Trash2, X, Upload, Save, Users } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 // Character type
@@ -570,49 +570,62 @@ export default function App() {
             <AnimatePresence mode="popLayout">
               {characters
                 .filter(char => char.series === activeTab)
-                .map((char, index) => (
-                <motion.div
-                  key={char.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ delay: index * 0.05 }}
-                  className="group relative bg-[#121212] rounded-2xl overflow-hidden border border-white/5 hover:border-red-600/50 transition-all duration-500 shadow-2xl"
-                >
-                  {/* Admin Actions */}
-                  {isAdmin && (
-                    <div className="absolute top-4 right-4 z-20 flex gap-2">
-                      <button 
-                        onClick={() => {
-                          setEditingCharacter(char);
-                          setIsModalOpen(true);
-                        }}
-                        className="p-2 bg-black/60 backdrop-blur-md rounded-full border border-white/10 text-white hover:bg-white hover:text-black transition-all"
-                      >
-                        <Edit className="w-4 h-4" />
-                      </button>
-                      <button 
-                        onClick={() => handleDeleteCharacter(char.id)}
-                        className="p-2 bg-black/60 backdrop-blur-md rounded-full border border-white/10 text-red-500 hover:bg-red-500 hover:text-white transition-all"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
-                    </div>
-                  )}
+                .map((char, index) => {
+                  const hasTera = characters.some(c => c.name.includes('Tera'));
+                  const hasEmmanuel = characters.some(c => c.name.includes('Emmanuel'));
+                  const hasMaria = characters.some(c => c.name.includes('Maria'));
+                  const isFamilyMember = char.name.includes('Tera') || char.name.includes('Emmanuel') || char.name.includes('Maria');
+                  const showFamilyEgg = hasTera && hasEmmanuel && hasMaria && isFamilyMember;
 
-                  {/* Rank Badge */}
-                  <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
-                    <div className="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-xs font-bold text-gray-300 w-fit">
-                      #{index + 1}
-                    </div>
-                    {(char.name.includes('Lisa') || char.name.includes('Tera') || char.name.includes('Julia')) && (
-                      <div className="bg-red-600/80 backdrop-blur-md px-3 py-1 rounded-full border border-red-400/30 text-[10px] font-black text-white uppercase tracking-tighter w-fit flex items-center gap-1">
-                        <Heart className="w-3 h-3 fill-current" />
-                        MILF SUPREMACY: ABSOLUTE
+                  return (
+                    <motion.div
+                      key={char.id}
+                      layout
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ delay: index * 0.05 }}
+                      className="group relative bg-[#121212] rounded-2xl overflow-hidden border border-white/5 hover:border-red-600/50 transition-all duration-500 shadow-2xl"
+                    >
+                      {/* Admin Actions */}
+                      {isAdmin && (
+                        <div className="absolute top-4 right-4 z-20 flex gap-2">
+                          <button 
+                            onClick={() => {
+                              setEditingCharacter(char);
+                              setIsModalOpen(true);
+                            }}
+                            className="p-2 bg-black/60 backdrop-blur-md rounded-full border border-white/10 text-white hover:bg-white hover:text-black transition-all"
+                          >
+                            <Edit className="w-4 h-4" />
+                          </button>
+                          <button 
+                            onClick={() => handleDeleteCharacter(char.id)}
+                            className="p-2 bg-black/60 backdrop-blur-md rounded-full border border-white/10 text-red-500 hover:bg-red-500 hover:text-white transition-all"
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </button>
+                        </div>
+                      )}
+
+                      {/* Rank Badge */}
+                      <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
+                        <div className="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-xs font-bold text-gray-300 w-fit">
+                          #{index + 1}
+                        </div>
+                        {(char.name.includes('Lisa') || char.name.includes('Tera') || char.name.includes('Julia')) && (
+                          <div className="bg-red-600/80 backdrop-blur-md px-3 py-1 rounded-full border border-red-400/30 text-[10px] font-black text-white uppercase tracking-tighter w-fit flex items-center gap-1">
+                            <Heart className="w-3 h-3 fill-current" />
+                            MILF SUPREMACY: ABSOLUTE
+                          </div>
+                        )}
+                        {showFamilyEgg && (
+                          <div className="bg-blue-600/80 backdrop-blur-md px-3 py-1 rounded-full border border-blue-400/30 text-[10px] font-black text-white uppercase tracking-tighter w-fit flex items-center gap-1">
+                            <Users className="w-3 h-3 fill-current" />
+                            FAMILY SECRET: T + E = M
+                          </div>
+                        )}
                       </div>
-                    )}
-                  </div>
 
                   {/* Image Container */}
                   <div className="aspect-[2/3] overflow-hidden relative">
@@ -681,12 +694,12 @@ export default function App() {
                       {userVotes.has(char.id) ? "Voted" : "Thirst"}
                     </button>
                   </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </div>
-        )}
-      </main>
+                    );
+                  })}
+              </AnimatePresence>
+            </div>
+          )}
+        </main>
 
       {/* Admin Modal */}
       <AnimatePresence>
