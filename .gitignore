@@ -9,3 +9,9 @@ coverage/
 firebase-applet-config.json
 credentials.json
 config.js
+node_modules/
+dist/
+build/
+coverage/
+.DS_Store
+*.log

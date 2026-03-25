@@ -239,13 +239,6 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/3/3a/Alucard_%28animated_series%29_-_04.png/revision/latest?cb=20231003170421',
     thirstCount: 0,
     series: 'nocturne'
-  },
-  {
-    name: 'Tera Renard (Pin-up)',
-    description: 'Bonus thirst 200%. The Speaker mother in her legendary summer attire. Art by @rynplais.',
-    imageUrl: 'https://pbs.twimg.com/media/F8L_8S8X0AA9v9T?format=jpg&name=large',
-    thirstCount: 0,
-    series: 'nocturne'
   }
 ];
 

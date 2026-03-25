@@ -43,6 +43,14 @@ We recognize the absolute power of the mothers in this franchise:
    ```
 4. **Open your browser** to `http://localhost:3000` and prepare to witness the thirst.
 
+## 🔒 Environment Variables
+
+To keep your crypt secure, copy `.env.example` to `.env` and fill in your Firebase credentials:
+```bash
+cp .env.example .env
+```
+The application uses `VITE_` prefixed variables to ensure they are accessible in the client-side code.
+
 ## 📜 License
 
 Licensed under the **Dracula's Curse License**. You are free to use this code, but if you do, a very handsome dhampir might show up at your house to complain about your coding style.
