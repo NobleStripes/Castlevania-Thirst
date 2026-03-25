@@ -26,6 +26,7 @@ interface Character {
   thirstCount: number;
   imageUrl: string;
   description: string;
+  loreComment?: string;
   objectPosition?: string;
   series: 'original' | 'nocturne';
 }
@@ -39,6 +40,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Alucard',
     description: 'The dhampir son of Dracula. Elegance, sadness, and perfect hair.',
+    loreComment: 'Perfect hair, perfect skin, perfect trauma. 10/10 would let him ignore my texts.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/2/21/Alucard_(animated_series)_-_01.jpg/revision/latest?cb=20250816201900',
     thirstCount: 0,
     series: 'original'
@@ -46,6 +48,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Trevor Belmont',
     description: 'The monster hunter with a whip, a bad attitude, and a surprising amount of heart.',
+    loreComment: "Smells like beer and wet dog, but we're still here, aren't we?",
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/a/a6/Trevor_in_S4_trailer.png/revision/latest?cb=20210430192304',
     thirstCount: 0,
     series: 'original'
@@ -53,6 +56,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Sypha Belnades',
     description: 'The Speaker magician who burns everything down with style.',
+    loreComment: "She's the only one with a brain cell in the trio. Also, she can literally set you on fire.",
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/7/73/Sypha_in_S4_trailer.png/revision/latest?cb=20210430191616',
     objectPosition: 'center',
     thirstCount: 0,
@@ -61,6 +65,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Vlad Dracula Tepes',
     description: 'The King of Vampires. A tragic figure driven by grief and a desire to end the world.',
+    loreComment: "The ultimate 'I'm not mad, I'm just ending the world' energy.",
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/5/5d/Dracula_(animated_series)_-_03.png/revision/latest?cb=20180919024511',
     thirstCount: 0,
     series: 'original'
@@ -68,6 +73,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Carmilla',
     description: 'The vampire queen of Styria. Ambition, power, and a sharp tongue.',
+    loreComment: 'Gaslight, Gatekeep, Girlboss, Genocide.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/9/90/Carmilla_talking_through_a_communication_mirror.png/revision/latest?cb=20210501215743',
     thirstCount: 0,
     series: 'original'
@@ -75,6 +81,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Lenore',
     description: 'The diplomat sister. Soft, manipulative, and deeply dangerous.',
+    loreComment: "She'll give you a ring, but it's not the kind you want. Or maybe it is. We don't judge.",
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/1/19/Lenore_-_01.png/revision/latest?cb=20200307050716',
     thirstCount: 0,
     series: 'original'
@@ -82,6 +89,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Striga',
     description: 'The warrior sister. An absolute unit in Day Armor.',
+    loreComment: "Step on me? No, she'll literally trample you in Day Armor. And you'll thank her.",
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/f/fb/Striga_-_01.jpg/revision/latest?cb=20200307113743',
     thirstCount: 0,
     series: 'original'
@@ -89,6 +97,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Isaac',
     description: 'The forgemaster on a journey of self-discovery and philosophical murder.',
+    loreComment: 'Philosophical murder is the best kind of murder. Also, his drip is immaculate.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/3/3d/Isaac1jpg.png/revision/latest?cb=20181026190553',
     thirstCount: 0,
     series: 'original'
@@ -96,6 +105,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Hector',
     description: 'The forgemaster who just wanted to be loved (and maybe a few pets).',
+    loreComment: "The human equivalent of a 'Kick Me' sign, but we love him anyway.",
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/b/b9/Hector_(animated_series)_-_01.jpg/revision/latest?cb=20180806085342',
     thirstCount: 0,
     series: 'original'
@@ -103,6 +113,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Saint Germain',
     description: 'The eccentric traveler of the Infinite Corridor. Always searching for his lost love.',
+    loreComment: 'Just a man looking for his girlfriend in a magical hallway. Relatable.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/e/e0/Saint_Germain_(animated_series)_-_02.png/revision/latest?cb=20210423210134',
     thirstCount: 0,
     series: 'original'
@@ -110,6 +121,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Godbrand',
     description: 'The Viking vampire. He likes boats, blood, and being incredibly loud.',
+    loreComment: 'He just wants to build a boat and drink pig blood. A simple man with simple needs.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/6/65/Godbrand_-_02.jpg/revision/latest?cb=20180909111559',
     thirstCount: 0,
     series: 'original'
@@ -117,6 +129,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Lisa Tepes',
     description: 'The woman who humanized Dracula. A doctor of science, kindness, and absolute motherly grace. 10/10 would start a genocide for her.',
+    loreComment: 'The only woman who could tell Dracula to sit down and actually have him do it.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/d/d3/Lisa%27s_faceshot.png/revision/latest?cb=20181226040928',
     thirstCount: 0,
     series: 'original'
@@ -124,6 +137,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Morana',
     description: 'The strategist of the Styrian Council of Sisters. Calm, collected, and deeply devoted to Striga.',
+    loreComment: 'The only one in Styria who actually knows how to do taxes.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/d/d8/Morana_-_01.jpg/revision/latest?cb=20200307114231',
     thirstCount: 0,
     series: 'original'
@@ -131,6 +145,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Richter Belmont',
     description: 'The young Belmont descendant. Magic, whips, and a legacy to uphold.',
+    loreComment: "He's got the magic, he's got the whip, he's got the 'I saw my mom die' trauma.",
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/b/b0/Richter_Belmont_-_Nocturne_-_05.jpg/revision/latest?cb=20230928115344',
     thirstCount: 0,
     series: 'nocturne'
@@ -138,6 +153,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Maria Renard',
     description: 'The revolutionary Speaker. Animal spirits and fierce determination.',
+    loreComment: "Revolutionary teen with a bird. Don't mess with the bird.",
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/6/67/Maria_Renard_%28animated_series%29_-_01.png/revision/latest?cb=20230928202720',
     thirstCount: 0,
     series: 'nocturne'
@@ -145,6 +161,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Olrox',
     description: 'The Aztec vampire. Sophisticated, powerful, and enigmatic.',
+    loreComment: 'The most interesting man in the world, but with fangs and Aztec magic.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/0/07/Olrox_%28Nocturne%29.png/revision/latest?cb=20230929005944',
     thirstCount: 0,
     series: 'nocturne'
@@ -152,6 +169,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Erzsebet Báthory (Human Form)',
     description: 'The elegant aristocrat. A beauty that hides a primordial darkness.',
+    loreComment: "She looks like she'd judge your wine choice before drinking your blood.",
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/8/89/Erzsebet_B%C3%A1thory_-_05.png/revision/latest?cb=20260123161109',
     thirstCount: 0,
     series: 'nocturne'
@@ -159,6 +177,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Erzsebet Báthory (Sekhmet)',
     description: 'The Vampire Messiah. The goddess of war and blood incarnate.',
+    loreComment: "Goddess of war? More like Goddess of 'I'm about to make this everyone's problem'.",
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/0/0d/Erzsebet_B%C3%A1thory_-_01.png/revision/latest?cb=20231002142228',
     thirstCount: 0,
     series: 'nocturne'
@@ -166,6 +185,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Annette',
     description: 'The revolutionary from the Caribbean. Earth magic and a spirit of freedom.',
+    loreComment: 'She can turn the ground into a weapon. Literally grounded.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/5/58/Annette_%28animated_series%29_-_01.png/revision/latest?cb=20230928210924',
     thirstCount: 0,
     series: 'nocturne'
@@ -173,27 +193,31 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Drolta Tzuentes (Vampire)',
     description: 'The high priestess of Erzsebet. Style, cruelty, and pink fire.',
+    loreComment: 'Pink fire and high heels. The peak of vampire fashion.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/e/eb/Horror_Beyond_Nightmares_-_Nocturne_-_30.png/revision/latest?cb=20230929132946',
     thirstCount: 0,
     series: 'nocturne'
   },
   {
     name: 'Tera Renard (Human)',
-    description: 'The Speaker mother who literally broke the internet. Powerful, protective, and the ultimate MILF. Motherhood supremacy starts here.',
+    description: 'The Speaker mother of Maria. Powerful, protective, and the ultimate embodiment of motherhood supremacy.',
+    loreComment: 'Literally broke the internet upon her debut. We are all her children now.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/b/bf/Tera_%28animated_series%29_-_01.png/revision/latest?cb=20230928204734',
     thirstCount: 0,
     series: 'nocturne'
   },
   {
     name: 'Tera Renard (Vampire)',
-    description: 'The tragic sacrifice. Even in her dark transformation, she remains a fan favorite.',
+    description: 'The tragic sacrifice. Even in her dark transformation, her maternal spirit remains unbroken.',
+    loreComment: "Motherhood is eternal, even if you have a sudden craving for blood.",
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/f/fe/Vampier_Tera.png/revision/latest?cb=20250125152046',
     thirstCount: 0,
     series: 'nocturne'
   },
   {
     name: 'Abbot Emmanuel',
-    description: 'The conflicted man of faith. A complex, powerful DILF.',
+    description: 'The conflicted man of faith. A complex, powerful figure struggling between his devotion and his desperate choices.',
+    loreComment: 'The DILF of the church. Conflicted, powerful, and deeply in need of a therapist.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/7/7a/Abbot_-_01.png/revision/latest?cb=20230929134245',
     thirstCount: 0,
     series: 'nocturne'
@@ -201,6 +225,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Mizrak (Human)',
     description: 'The Knight of the Order of St. John. Loyal, skilled, and undeniably handsome.',
+    loreComment: 'A knight who actually has a conscience. Rare in this show.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/4/46/Mizrak_-_01.png/revision/latest?cb=20230928203556',
     thirstCount: 0,
     series: 'nocturne'
@@ -208,6 +233,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Edouard (Human)',
     description: 'The revolutionary singer with the voice of an angel. A soul that shines through his music.',
+    loreComment: 'Voice of an angel, heart of a revolutionary.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/e/ef/Edouard_-_01.png/revision/latest?cb=20230930120334',
     thirstCount: 0,
     series: 'nocturne'
@@ -215,6 +241,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Edouard (Night Creature)',
     description: 'The tragic transformation. Even as a Night Creature, his voice remains a beacon of hope.',
+    loreComment: "Even as a monster, he's still hitting those high notes. Respect.",
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/3/38/Edouard_-_02.png/revision/latest?cb=20230930182553',
     thirstCount: 0,
     series: 'nocturne'
@@ -222,6 +249,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Julia Belmont',
     description: 'The mother of Richter. A powerful Belmont who fought to the end. The ultimate warrior mom. Thirst levels: Legendary.',
+    loreComment: "The original warrior mom. She died so we could have Richter's angst.",
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/f/f0/Julia_Belmont.png/revision/latest?cb=20230929004249',
     thirstCount: 0,
     series: 'nocturne'
@@ -229,6 +257,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Juste Belmont',
     description: 'The legendary Belmont of the past. Even in his older years, he carries the weight of his legacy.',
+    loreComment: 'The legendary Belmont who just wants to be left alone with his grief.',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/8/8a/Juste_Belmont_%28animated_series%29_-_01.png/revision/latest?cb=20231001030823',
     thirstCount: 0,
     series: 'nocturne'
@@ -236,6 +265,7 @@ const INITIAL_CHARACTERS: Omit<Character, 'id'>[] = [
   {
     name: 'Alucard (Nocturne)',
     description: 'The legendary dhampir returns. Older, wiser, and still incredibly handsome.',
+    loreComment: "He's back, he's older, and he's still the main character of our hearts.",
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/3/3a/Alucard_%28animated_series%29_-_04.png/revision/latest?cb=20231003170421',
     thirstCount: 0,
     series: 'nocturne'
@@ -336,6 +366,7 @@ export default function App() {
           name: char.name,
           imageUrl: char.imageUrl,
           description: char.description,
+          loreComment: char.loreComment || null,
           series: char.series,
           thirstCount: increment(0) 
         }, { merge: true });
@@ -381,6 +412,7 @@ export default function App() {
       const data = {
         name: editingCharacter.name,
         description: editingCharacter.description,
+        loreComment: editingCharacter.loreComment || null,
         imageUrl: editingCharacter.imageUrl,
         series: editingCharacter.series || activeTab,
         thirstCount: editingCharacter.thirstCount || 0,
@@ -622,6 +654,18 @@ export default function App() {
                         "{char.description}"
                       </p>
                     </div>
+
+                    {char.loreComment && (
+                      <div className="mb-6">
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="text-[10px] font-display uppercase tracking-[0.2em] text-red-500 font-black">Lore Comment</span>
+                          <div className="h-px flex-grow bg-gradient-to-r from-red-900/50 to-transparent" />
+                        </div>
+                        <p className="text-xs text-gray-400 leading-relaxed font-mono bg-red-950/20 p-3 rounded-lg border border-red-900/10">
+                          {char.loreComment}
+                        </p>
+                      </div>
+                    )}
                     
                     <button
                       onClick={() => handleVote(char.id)}
@@ -717,11 +761,22 @@ export default function App() {
                   <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Description</label>
                   <textarea 
                     required
-                    rows={3}
+                    rows={2}
                     value={editingCharacter?.description || ''}
                     onChange={e => setEditingCharacter(prev => ({ ...prev, description: e.target.value }))}
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-red-600 transition-colors resize-none"
                     placeholder="Brief description of their thirstiness..."
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Lore Comment (Funny/Lore Friendly)</label>
+                  <textarea 
+                    rows={2}
+                    value={editingCharacter?.loreComment || ''}
+                    onChange={e => setEditingCharacter(prev => ({ ...prev, loreComment: e.target.value }))}
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-red-600 transition-colors resize-none"
+                    placeholder="Perfect hair, perfect trauma..."
                   />
                 </div>
 

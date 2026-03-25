@@ -12,6 +12,8 @@ service cloud.firestore {
     //   - thirstCount: number (required, >= 0)
     //   - imageUrl: string (optional)
     //   - description: string (optional)
+    //   - loreComment: string (optional)
+    //   - objectPosition: string (optional)
     //   - series: string (required, one of ['original', 'nocturne', 'tera-thirst'])
     //
     // Collection: votes
@@ -42,7 +44,9 @@ service cloud.firestore {
              data.thirstCount is number && data.thirstCount >= 0 &&
              data.series in ['original', 'nocturne', 'tera-thirst'] &&
              (!('imageUrl' in data) || data.imageUrl is string) &&
-             (!('description' in data) || data.description is string);
+             (!('description' in data) || data.description is string) &&
+             (!('loreComment' in data) || (data.loreComment is string || data.loreComment == null)) &&
+             (!('objectPosition' in data) || data.objectPosition is string);
     }
 
     function isValidVote(data, voteId) {

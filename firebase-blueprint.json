@@ -9,6 +9,7 @@
         "thirstCount": { "type": "number", "description": "Total number of thirst votes." },
         "imageUrl": { "type": "string", "description": "URL to the character's image." },
         "description": { "type": "string", "description": "Brief description of why they are thirsty." },
+        "loreComment": { "type": "string", "description": "A funny, lore-friendly comment about the character." },
         "series": { "type": "string", "enum": ["original", "nocturne", "tera-thirst"], "description": "The series or category the character belongs to." }
       },
       "required": ["name", "thirstCount"]
