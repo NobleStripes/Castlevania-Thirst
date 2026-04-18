@@ -232,8 +232,8 @@ export const INITIAL_CHARACTERS: CharacterInput[] = [
     series: 'nocturne',
   },
   {
-    name: 'Erzsebet Bathory (Human)',
-    faction: 'Bathory Court',
+    name: 'Erzsebet Báthory (Human)',
+    faction: 'Báthory Court',
     description: 'Erzsebet in her aristocratic human-like appearance.',
     wikiUrl: 'https://castlevania.fandom.com/wiki/Erzsebet_B%C3%A1thory',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/8/89/Erzsebet_B%C3%A1thory_-_05.png/revision/latest?cb=20260123161109',
@@ -241,8 +241,8 @@ export const INITIAL_CHARACTERS: CharacterInput[] = [
     series: 'nocturne',
   },
   {
-    name: 'Erzsebet Bathory (Vampire)',
-    faction: 'Bathory Court',
+    name: 'Erzsebet Báthory (Vampire)',
+    faction: 'Báthory Court',
     description: 'Erzsebet in her divine vampiric battle form.',
     wikiUrl: 'https://castlevania.fandom.com/wiki/Erzsebet_B%C3%A1thory',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/0/0d/Erzsebet_B%C3%A1thory_-_01.png/revision/latest?cb=20231002142228',
@@ -251,7 +251,7 @@ export const INITIAL_CHARACTERS: CharacterInput[] = [
   },
   {
     name: 'Drolta Tzuentes',
-    faction: 'Bathory Court',
+    faction: 'Báthory Court',
     description: 'Erzsebet\'s high priestess and elite vampire enforcer.',
     wikiUrl: 'https://castlevania.fandom.com/wiki/Drolta_Tzuentes_(animated_series)',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/e/eb/Horror_Beyond_Nightmares_-_Nocturne_-_30.png/revision/latest?cb=20230929132946',

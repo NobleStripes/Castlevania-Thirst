@@ -1,84 +1,114 @@
 # Castlevania Thirst
 
-Castlevania Thirst is a voting board for Netflix Castlevania and Castlevania: Nocturne characters, organized by faction and powered by one extremely serious question:
+This repository is what happens when a gothic apocalypse, a vampire succession crisis, several generations of catastrophically attractive people, and a complete collapse of normal judgment all converge into one web app.
 
-Who is the most catastrophic thirst trap in this franchise?
+Castlevania Thirst is a voting board for Netflix Castlevania and Castlevania: Nocturne characters, organized by faction and dedicated to the only question that has ever truly mattered:
 
-This repository exists because somebody looked at a gothic horror saga full of vampire politics, intergenerational trauma, church corruption, doomed love, immaculate cheekbones, and one profoundly dangerous supply of Belmont genetics, and decided that what the world needed was a ranked scoreboard.
+Who is the most ruinously hot problem in this franchise?
 
-That somebody was correct.
+Not strongest.
+Not smartest.
+Not morally upright.
+
+Hot.
+A problem.
+Preferably both.
+
+## Why This Exists
+
+Because at some point the human brain stops being a machine for reason and becomes a haunted cathedral full of bad decisions.
+
+Because somebody had to look at Belmonts, vampires, speakers, forgemasters, bishops, revolutionaries, immortal aristocrats, and whatever exactly Olrox has going on, and say:
+
+"This should be ranked publicly."
+
+Because the thirst was already there.
+The app merely gave it architecture.
 
 ## What This Is
 
-- A faction-sorted character board for the original show and Nocturne.
-- A live vote counter with optional Firebase sync.
-- A local fallback mode for when Firebase is not configured.
-- A Castlevania Wiki-linked roster so every character entry has an actual reference.
-- A shrine to terrible decisions, exquisite character design, and preventable emotional damage.
+- A faction-sorted roster for the original show and Nocturne.
+- A live vote board for ranking the franchise's most dangerous visual liabilities.
+- A local fallback mode for offline thirst management.
+- Optional Firebase sync for cloud-grade dehydration.
+- Character cards with Castlevania Wiki links for factual support when your judgment has clearly abandoned you.
+- A formal badge system for the MILF council, because some truths require infrastructure.
 
 ## The Tera Incident
 
-This project would be dishonest if it did not address the event that helped spiritually validate its existence.
+We need to speak plainly.
 
-An animator associated with Castlevania: Nocturne made pinup Tera art.
+This project would be a lie if it did not acknowledge the event that pushed it from "funny idea" into "historically necessary software artifact."
+
+An animator associated with Castlevania: Nocturne made a pinup Tera in black swimsuit art.
 
 Credit where it is due: the specific post this README is referring to is by rynplais:
 https://x.com/rynplais/status/1712237713267568864?s=20
 
-Additional evidence:
-https://x.com/rynplais/status/1717930921704190190?s=20
-https://x.com/rynplais/status/1708102647427846609?s=20
+That was not a normal fandom moment.
+That was not "nice fan reception."
+That was not "some people enjoyed the art."
 
-That was not a minor fandom moment. That was a systems event.
+That was an atmospheric disturbance.
+A spiritual sinkhole.
+A measurable collapse in public hydration.
 
-That was the kind of image drop that makes a normal person close the tab, stare into middle distance, and ask whether mankind was ever supposed to wield this much power.
+That was the kind of image drop that makes a person close every tab they have open, stand up, pace once around the room, and realize that civilization is weaker than anyone previously believed.
 
-So yes, this README is zeroing in on that.
+Once official-adjacent Tera pinup art enters the bloodstream of the community, you are no longer making a novelty app.
+You are documenting an event site.
+You are preserving evidence.
+You are building the digital equivalent of yellow police tape around a crater.
 
-Because once official-adjacent Tera pinup art enters the cultural bloodstream, you are no longer building a normal fan app. You are managing fallout.
+And from that crater rose a permanent design principle:
 
-And from that fallout rose a simple principle:
-
-Tera Renard was never going to be treated like a background data row.
+Tera Renard was never again going to be treated like a background entry in a neutral database.
 
 Neither were Lisa Tepes or Julia Belmont.
 
 Hence the MILF badge.
+Hence the council.
+Hence the consequences.
 
-## Current Priorities
+## The Mission
 
-This app currently focuses on:
+This app is trying to do three things at once:
 
-- Original-series characters.
-- Nocturne characters.
-- Faction ordering instead of random roster sprawl.
-- Character cards with direct Castlevania Wiki links.
-- The correct level of reverence for beautiful, dangerous people making horrible life choices.
+- stay funny
+- stay accurate
+- stay honest about the fact that this franchise keeps manufacturing beautiful disasters at an industrial rate
+
+It is not trying to pretend that Dracula is just a villain.
+It is not trying to pretend Carmilla is just a strategist.
+It is not trying to pretend Olrox is operating inside normal human categories.
+It is especially not trying to pretend that the community remained mentally stable after Tera pinup art entered the chat.
 
 ## Roster Logic
 
-Characters are grouped by show, then ordered by faction.
+The board is split by show, then ordered by faction, because random character soup is for lesser systems.
 
-Original-series examples:
+Original-series factions include:
 - Belmont Allies
 - Tepes Family
 - Forgemasters
 - Styrian Sisterhood
 - Dracula's War Council
 
-Nocturne examples:
+Nocturne factions include:
 - Belmont Clan
 - Revolutionaries
 - Renard Household
 - Church
 - Independent Vampires
-- Bathory Court
+- Báthory Court
 
-This means the board does not read like a wiki dump. It reads like a curated gallery of faction-based bad decisions.
+This means the board reads less like a spreadsheet and more like an organized museum of extremely attractive bad omens.
 
 ## The MILF Council
 
-Some truths do not require debate.
+Some institutions are built on law.
+Some are built on tradition.
+This one is built on undeniable screen presence.
 
 The MILF badge currently applies to:
 - Lisa Tepes
@@ -86,9 +116,9 @@ The MILF badge currently applies to:
 - Tera Renard (Vampire)
 - Julia Belmont
 
-This is not arbitrary.
-
-This is governance.
+This is not random.
+This is not temporary.
+This is governance by overwhelming evidence.
 
 ## Tech Stack
 
@@ -101,9 +131,9 @@ This is governance.
 - Lucide React
 - Tailwind CSS
 
-The code is modern.
-The premise is deeply unserious.
-The execution is more disciplined than the premise deserves.
+So yes, the software is modern.
+The premise is deranged.
+The implementation is cleaner than the emotional state that inspired it.
 
 ## Getting Started
 
@@ -120,7 +150,7 @@ cd Castlevania-Thirst
 npm install
 ```
 
-3. Start the app:
+3. Start the ritual:
 
 ```bash
 npm run dev
@@ -132,17 +162,22 @@ npm run dev
 http://localhost:3000
 ```
 
+Then begin voting like your conscience was never a factor.
+
 ## Firebase
 
 Firebase is optional.
 
-If the `VITE_FIREBASE_*` variables in [.env.example](.env.example) are empty, the app runs in local mode and stores vote state in the browser.
+If the `VITE_FIREBASE_*` variables in [.env.example](.env.example) are empty, the app runs in local mode and stores votes in the browser.
 
 If Firebase is configured, the app can:
 - load characters from Firestore
 - sync votes in real time
 - support sign-in based voting
 - support admin sync and edits
+
+In other words, local mode is a private spiral.
+Cloud mode is a coordinated public event.
 
 ## Scripts
 
@@ -165,20 +200,27 @@ Each entry includes:
 - optional badge
 - series
 
-This project no longer depends on Gemini, random generated blurbs, or mystery links that die on contact.
+This project no longer depends on Gemini, random generated blurbs, or mystery links that die on impact.
 
-It is now a cleaner, better-documented machine for ranking beautiful disasters.
+It is now a more disciplined machine for cataloging elegant monsters, doomed heroes, church-affiliated issues, and the occasional milf-tagged force of nature.
 
 ## Important Truths
 
-- Dracula remains one of the most elegant problems ever animated.
-- Carmilla still weaponizes posture better than most armies weaponize steel.
-- Olrox has his own gravitational field.
-- Mizrak is proof that church-affiliated characters can still be an issue.
-- The existence of Tera pinup art means history forked and this repository lives on the cursed branch.
+- Dracula remains one of the most beautifully catastrophic men ever animated.
+- Carmilla stands like she already won and the rest of the room simply hasn't processed it yet.
+- Isaac has the energy of a man who could kill you, forgive you, and outdress you in the same afternoon.
+- Olrox is less a character than a controlled detonation in jewelry.
+- Mizrak proves the church was also contributing to the problem set.
+- The existence of Tera pinup art means history branched, and this repository lives on the cursed but artistically superior timeline.
 
 ## License
 
 Use the code if you want.
 
-Just understand that this repository was built in full awareness that the Castlevania franchise keeps producing people who are too dangerous to be this hot, and yet here we all are.
+But understand what you are inheriting.
+
+This is not merely a repo.
+It is a ledger.
+A ranking engine.
+A witness statement.
+A digital monument to the fact that the Castlevania franchise keeps producing people who are way too dangerous to be this hot, and yet humanity continues to press forward anyway.
