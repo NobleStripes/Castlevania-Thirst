@@ -107,7 +107,7 @@ export const INITIAL_CHARACTERS: CharacterInput[] = [
     faction: 'Dracula\'s War Council',
     description: 'Vampire general who appears in Dracula\'s war council.',
     wikiUrl: 'https://castlevania.fandom.com/wiki/Cho',
-    imageUrl: 'https://picsum.photos/seed/cho-castlevania/400/600?blur=1',
+    imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/a/a8/Ch%C5%8D_-_02.jpg/revision/latest?cb=20210120025250',
     thirstCount: 0,
     series: 'original',
   },
