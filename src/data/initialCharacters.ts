@@ -32,6 +32,7 @@ export const INITIAL_CHARACTERS: CharacterInput[] = [
   {
     name: 'Lisa Tepes',
     faction: 'Tepes Family',
+    badge: 'MILF',
     description: 'Human scholar and physician whose death drives the original story.',
     wikiUrl: 'https://castlevania.fandom.com/wiki/Lisa_Tepes_(animated_series)',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/d/d3/Lisa%27s_faceshot.png/revision/latest?cb=20181226040928',
@@ -131,6 +132,7 @@ export const INITIAL_CHARACTERS: CharacterInput[] = [
   {
     name: 'Julia Belmont',
     faction: 'Belmont Clan',
+    badge: 'MILF',
     description: 'Richter\'s mother and a powerful Belmont warrior in Nocturne.',
     wikiUrl: 'https://castlevania.fandom.com/wiki/Julia_Belmont',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/f/f0/Julia_Belmont.png/revision/latest?cb=20230929004249',
@@ -176,6 +178,7 @@ export const INITIAL_CHARACTERS: CharacterInput[] = [
   {
     name: 'Tera Renard',
     faction: 'Renard Household',
+    badge: 'MILF',
     description: 'Speaker and protector connected to Maria in Nocturne.',
     wikiUrl: 'https://castlevania.fandom.com/wiki/Tera_(animated_series)',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/b/bf/Tera_%28animated_series%29_-_01.png/revision/latest?cb=20230928204734',
@@ -185,6 +188,7 @@ export const INITIAL_CHARACTERS: CharacterInput[] = [
   {
     name: 'Tera Renard (Vampire)',
     faction: 'Renard Household',
+    badge: 'MILF',
     description: 'Tera after her vampire transformation in Nocturne.',
     wikiUrl: 'https://castlevania.fandom.com/wiki/Tera_(animated_series)',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/f/fe/Vampier_Tera.png/revision/latest?cb=20250125152046',

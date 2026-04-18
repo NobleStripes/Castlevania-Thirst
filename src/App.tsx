@@ -299,6 +299,7 @@ export default function App() {
       const payload: CharacterInput = {
         name: editingCharacter.name || 'Unknown Character',
         faction: editingCharacter.faction || 'Independent',
+        badge: editingCharacter.badge?.trim() || undefined,
         description: editingCharacter.description || '',
         wikiUrl:
           editingCharacter.wikiUrl ||
@@ -509,8 +510,15 @@ export default function App() {
                       </div>
                     )}
 
-                    <div className="absolute left-3 top-3 z-10 rounded-full border border-white/15 bg-black/70 px-2 py-1 text-xs font-bold text-gray-200">
-                      #{index + 1}
+                    <div className="absolute left-3 top-3 z-10 flex flex-col gap-2">
+                      <div className="rounded-full border border-white/15 bg-black/70 px-2 py-1 text-xs font-bold text-gray-200">
+                        #{index + 1}
+                      </div>
+                      {character.badge && (
+                        <div className="w-fit rounded-full border border-pink-300/30 bg-pink-500/85 px-2 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-white">
+                          {character.badge}
+                        </div>
+                      )}
                     </div>
 
                     <img
@@ -696,6 +704,21 @@ export default function App() {
                       }
                       className="w-full rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-sm outline-none transition-colors focus:border-red-600"
                       placeholder="Belmont Clan"
+                    />
+                  </div>
+
+                  <div className="space-y-2 sm:col-span-2">
+                    <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Badge</label>
+                    <input
+                      value={editingCharacter?.badge || ''}
+                      onChange={(event) =>
+                        setEditingCharacter((prev) => ({
+                          ...prev,
+                          badge: event.target.value,
+                        }))
+                      }
+                      className="w-full rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-sm outline-none transition-colors focus:border-red-600"
+                      placeholder="MILF"
                     />
                   </div>
 

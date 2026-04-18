@@ -4,6 +4,7 @@ export interface Character {
   id: string;
   name: string;
   faction: string;
+  badge?: string;
   description: string;
   wikiUrl: string;
   imageUrl: string;
