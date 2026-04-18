@@ -3,6 +3,7 @@ export type Series = 'original' | 'nocturne';
 export interface Character {
   id: string;
   name: string;
+  faction: string;
   description: string;
   wikiUrl: string;
   imageUrl: string;

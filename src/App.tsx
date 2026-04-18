@@ -51,6 +51,18 @@ const toLocalCharacters = (): Character[] =>
     id: fallbackCharacterId(character.name),
   }));
 
+const factionOrder = new Map<string, number>();
+const characterOrder = new Map<string, number>();
+
+INITIAL_CHARACTERS.forEach((character, index) => {
+  const factionKey = `${character.series}:${character.faction}`;
+  if (!factionOrder.has(factionKey)) {
+    factionOrder.set(factionKey, factionOrder.size);
+  }
+
+  characterOrder.set(fallbackCharacterId(character.name), index);
+});
+
 const getProxiedUrl = (url: string) => {
   if (!url || url.startsWith('data:')) {
     return url;
@@ -60,7 +72,26 @@ const getProxiedUrl = (url: string) => {
 };
 
 function sortCharacters(items: Character[]) {
-  return [...items].sort((a, b) => b.thirstCount - a.thirstCount || a.name.localeCompare(b.name));
+  return [...items].sort((a, b) => {
+    const thirstDifference = b.thirstCount - a.thirstCount;
+    if (thirstDifference !== 0) {
+      return thirstDifference;
+    }
+
+    const aFactionRank = factionOrder.get(`${a.series}:${a.faction || 'Uncategorized'}`) ?? Number.MAX_SAFE_INTEGER;
+    const bFactionRank = factionOrder.get(`${b.series}:${b.faction || 'Uncategorized'}`) ?? Number.MAX_SAFE_INTEGER;
+    if (aFactionRank !== bFactionRank) {
+      return aFactionRank - bFactionRank;
+    }
+
+    const aCharacterRank = characterOrder.get(a.id) ?? characterOrder.get(fallbackCharacterId(a.name)) ?? Number.MAX_SAFE_INTEGER;
+    const bCharacterRank = characterOrder.get(b.id) ?? characterOrder.get(fallbackCharacterId(b.name)) ?? Number.MAX_SAFE_INTEGER;
+    if (aCharacterRank !== bCharacterRank) {
+      return aCharacterRank - bCharacterRank;
+    }
+
+    return a.name.localeCompare(b.name);
+  });
 }
 
 export default function App() {
@@ -267,6 +298,7 @@ export default function App() {
 
       const payload: CharacterInput = {
         name: editingCharacter.name || 'Unknown Character',
+        faction: editingCharacter.faction || 'Independent',
         description: editingCharacter.description || '',
         wikiUrl:
           editingCharacter.wikiUrl ||
@@ -499,6 +531,9 @@ export default function App() {
 
                     <div className="absolute bottom-3 left-3 right-3">
                       <h3 className="font-display text-xl font-black text-white">{character.name}</h3>
+                      <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.18em] text-gray-300">
+                        {character.faction}
+                      </p>
                       <p className="mt-1 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-red-400">
                         <Heart className="h-3 w-3 fill-current" />
                         {character.thirstCount} thirst points
@@ -645,6 +680,22 @@ export default function App() {
                       }
                       className="w-full resize-none rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-sm outline-none transition-colors focus:border-red-600"
                       placeholder="Short bio"
+                    />
+                  </div>
+
+                  <div className="space-y-2 sm:col-span-2">
+                    <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Faction</label>
+                    <input
+                      required
+                      value={editingCharacter?.faction || ''}
+                      onChange={(event) =>
+                        setEditingCharacter((prev) => ({
+                          ...prev,
+                          faction: event.target.value,
+                        }))
+                      }
+                      className="w-full rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-sm outline-none transition-colors focus:border-red-600"
+                      placeholder="Belmont Clan"
                     />
                   </div>
 
