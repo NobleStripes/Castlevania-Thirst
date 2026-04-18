@@ -4,7 +4,7 @@ export interface Character {
   id: string;
   name: string;
   description: string;
-  loreComment?: string;
+  wikiUrl: string;
   imageUrl: string;
   objectPosition?: string;
   thirstCount: number;
