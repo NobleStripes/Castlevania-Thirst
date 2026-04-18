@@ -1,24 +1,55 @@
-import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
-import { getFirestore, doc, getDocFromServer } from 'firebase/firestore';
-import firebaseConfig from '../firebase-applet-config.json';
+import { initializeApp, type FirebaseOptions } from 'firebase/app';
+import {
+  GoogleAuthProvider,
+  getAuth,
+  signInWithPopup,
+  signOut,
+  type UserCredential,
+} from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const db = getFirestore(app, firebaseConfig.firestoreDatabaseId);
-export const googleProvider = new GoogleAuthProvider();
+const firebaseConfig: FirebaseOptions = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+};
 
-export const signIn = () => signInWithPopup(auth, googleProvider);
-export const logOut = () => signOut(auth);
+const hasRequiredFirebaseConfig = Boolean(
+  firebaseConfig.apiKey &&
+    firebaseConfig.authDomain &&
+    firebaseConfig.projectId &&
+    firebaseConfig.storageBucket &&
+    firebaseConfig.messagingSenderId &&
+    firebaseConfig.appId,
+);
 
-// Connection test
-async function testConnection() {
-  try {
-    await getDocFromServer(doc(db, 'test', 'connection'));
-  } catch (error) {
-    if (error instanceof Error && error.message.includes('the client is offline')) {
-      console.error("Please check your Firebase configuration.");
-    }
+export const isFirebaseConfigured = hasRequiredFirebaseConfig;
+
+const app = hasRequiredFirebaseConfig ? initializeApp(firebaseConfig) : null;
+
+export const auth = app ? getAuth(app) : null;
+
+const databaseId = import.meta.env.VITE_FIREBASE_DATABASE_ID;
+export const db = app ? (databaseId ? getFirestore(app, databaseId) : getFirestore(app)) : null;
+
+const googleProvider = auth ? new GoogleAuthProvider() : null;
+
+export async function signIn(): Promise<UserCredential | null> {
+  if (!auth || !googleProvider) {
+    return null;
   }
+
+  return signInWithPopup(auth, googleProvider);
 }
-testConnection();
+
+export async function logOut(): Promise<void> {
+  if (!auth) {
+    return;
+  }
+
+  await signOut(auth);
+}
