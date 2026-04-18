@@ -30,8 +30,8 @@ export const INITIAL_CHARACTERS: CharacterInput[] = [
     series: 'original',
   },
   {
-    name: 'Lisa Tepes',
-    faction: 'Tepes Family',
+    name: 'Lisa Țepeș',
+    faction: 'Țepeș Family',
     badge: 'MILF',
     description: 'Human scholar and physician whose death drives the original story.',
     wikiUrl: 'https://castlevania.fandom.com/wiki/Lisa_Tepes_(animated_series)',
@@ -40,8 +40,8 @@ export const INITIAL_CHARACTERS: CharacterInput[] = [
     series: 'original',
   },
   {
-    name: 'Dracula (Vlad Dracula Tepes)',
-    faction: 'Tepes Family',
+    name: 'Dracula (Vlad Dracula Țepeș)',
+    faction: 'Țepeș Family',
     description: 'Vampire king and central antagonist of the original series.',
     wikiUrl: 'https://castlevania.fandom.com/wiki/Dracula_(animated_series)',
     imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/5/5d/Dracula_(animated_series)_-_03.png/revision/latest?cb=20180919024511',

@@ -78,7 +78,7 @@ From that swimsuit rose a permanent design principle:
 
 Tera Renard was never again going to be treated like a background entry in a neutral database.
 
-Neither were Lisa Tepes or Julia Belmont.
+Neither were Lisa Țepeș or Julia Belmont.
 
 Hence the MILF badge.
 Hence the council.
@@ -104,7 +104,7 @@ The board is split by show, then ordered by faction, because random character so
 
 Original-series factions include:
 - Belmont Allies
-- Tepes Family
+- Țepeș Family
 - Forgemasters
 - Styrian Sisterhood
 - Dracula's War Council
@@ -126,7 +126,7 @@ Some are built on tradition.
 This one is built on undeniable screen presence.
 
 The MILF badge currently applies to:
-- Lisa Tepes
+- Lisa Țepeș
 - Tera Renard
 - Tera Renard (Vampire)
 - Julia Belmont
