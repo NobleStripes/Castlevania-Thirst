@@ -36,31 +36,45 @@ The app merely gave it architecture.
 
 ## The Tera Incident
 
-We need to speak plainly.
+Let the record reflect that there was a before and an after.
 
-This project would be a lie if it did not acknowledge the event that pushed it from "funny idea" into "historically necessary software artifact."
+Before: Castlevania: Nocturne was an animated streaming series with critical acclaim, a compelling magic system, and a strong supporting cast including a warm, capable vampire hunter mother named Tera Renard.
 
-An animator associated with Castlevania: Nocturne made a Tera in black swimsuit pinup art.
+After: an animator who worked on Castlevania: Nocturne posted a Tera in black swimsuit pinup art to the internet and then just kept living their life as if nothing had happened.
 
-Credit where it is due: the specific post this README is referring to is by rynplais:
+The perpetrator is Ryan Plaisance (@rynplais) and this README is citing the post like a legal exhibit:
 https://x.com/rynplais/status/1712237713267568864?s=20
 
-That was not a normal fandom moment.
-That was not "nice fan reception."
-That was not "some people enjoyed the art."
+This was not a normal fan art moment.
+This was not a "nice to see the community engaging with the characters" moment.
+This was not even a "bold creative choice" moment.
 
-That was an atmospheric disturbance.
-A spiritual sinkhole.
-A measurable collapse in public hydration.
+This was an act of psychological warfare conducted with full production knowledge of the character model.
 
-That was the kind of image drop that makes a person close every tab they have open, stand up, pace once around the room, and realize that civilization is weaker than anyone previously believed.
+This was a professional who looked at the finished Tera Renard and thought: "I have seen inside this design. I know things. I will now transfer those things into the public domain. Directly. In swimsuit form."
 
-Once official-adjacent Tera pinup art enters the bloodstream of the community, you are no longer making a novelty app.
-You are documenting an event site.
-You are preserving evidence.
-You are building the digital equivalent of yellow police tape around a crater.
+And then they did it.
 
-And from that crater rose a permanent design principle:
+And then the internet saw it.
+
+And then nobody was normal anymore.
+
+The specific chain of events that followed is not fully documentable, but the downstream effects included:
+- at least one person opening a code editor
+- making a TypeScript type for a Castlevania thirst ranking system
+- giving that type a `badge` field
+- using that badge field to formally designate Tera Renard as a member of a council
+
+That council exists because of that post.
+This entire app exists because of that post.
+The MILF badge infrastructure, the faction ordering, the wiki links, the Firebase integration — all of it:
+
+Downstream consequences of one animator posting one pinup and going to sleep unbothered.
+
+If you are looking for someone to blame, the citation is above.
+If you are looking for someone to thank, the citation is also above.
+
+From that swimsuit rose a permanent design principle:
 
 Tera Renard was never again going to be treated like a background entry in a neutral database.
 
@@ -69,6 +83,7 @@ Neither were Lisa Tepes or Julia Belmont.
 Hence the MILF badge.
 Hence the council.
 Hence the consequences.
+Hence this entire repository.
 
 ## The Mission
 
