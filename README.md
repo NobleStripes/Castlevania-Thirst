@@ -25,6 +25,10 @@ An animator associated with Castlevania: Nocturne made pinup Tera art.
 Credit where it is due: the specific post this README is referring to is by rynplais:
 https://x.com/rynplais/status/1712237713267568864?s=20
 
+Additional evidence:
+https://x.com/rynplais/status/1717930921704190190?s=20
+https://x.com/rynplais/status/1708102647427846609?s=20
+
 That was not a minor fandom moment. That was a systems event.
 
 That was the kind of image drop that makes a normal person close the tab, stare into middle distance, and ask whether mankind was ever supposed to wield this much power.
