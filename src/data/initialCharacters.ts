@@ -123,6 +123,22 @@ export const INITIAL_CHARACTERS: CharacterInput[] = [
     series: 'nocturne',
   },
   {
+    name: 'Julia Belmont',
+    description: 'Richter\'s mother and a powerful Belmont warrior in Nocturne.',
+    wikiUrl: 'https://castlevania.fandom.com/wiki/Julia_Belmont',
+    imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/f/f0/Julia_Belmont.png/revision/latest?cb=20230929004249',
+    thirstCount: 0,
+    series: 'nocturne',
+  },
+  {
+    name: 'Juste Belmont',
+    description: 'Elder Belmont legend whose past still shapes Nocturne.',
+    wikiUrl: 'https://castlevania.fandom.com/wiki/Juste_Belmont_(animated_series)',
+    imageUrl: 'https://static.wikia.nocookie.net/castlevania/images/8/8a/Juste_Belmont_%28animated_series%29_-_01.png/revision/latest?cb=20231001030823',
+    thirstCount: 0,
+    series: 'nocturne',
+  },
+  {
     name: 'Olrox',
     description: 'Ancient vampire noble and major Nocturne figure.',
     wikiUrl: 'https://castlevania.fandom.com/wiki/Olrox_(animated_series)',
