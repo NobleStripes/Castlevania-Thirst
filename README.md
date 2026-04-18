@@ -40,7 +40,7 @@ We need to speak plainly.
 
 This project would be a lie if it did not acknowledge the event that pushed it from "funny idea" into "historically necessary software artifact."
 
-An animator associated with Castlevania: Nocturne made a pinup Tera in black swimsuit art.
+An animator associated with Castlevania: Nocturne made a Tera in black swimsuit pinup art.
 
 Credit where it is due: the specific post this README is referring to is by rynplais:
 https://x.com/rynplais/status/1712237713267568864?s=20
