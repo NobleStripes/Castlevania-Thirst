@@ -1,83 +1,177 @@
-# 🧛‍♂️ Castlevania Thirst 🩸
+# Castlevania Thirst
 
-**⚠️ THIRST WARNING: THIS REPOSITORY CONTAINS EXTREME LEVELS OF DEHYDRATION. DRINK A GLASS OF WATER BEFORE PROCEEDING OR PREPARE TO BE CONSUMED BY THE GOTHIC ALLURE. ⚠️**
+Castlevania Thirst is a voting board for Netflix Castlevania and Castlevania: Nocturne characters, organized by faction and powered by one extremely serious question:
 
-Welcome to **Castlevania Thirst**, the only application brave enough to quantify the collective dehydration of the Netflix Castlevania fandom. We've moved beyond "What is a man?" and straight into "Why is everyone in this show so hot?"
+Who is the most catastrophic thirst trap in this franchise?
 
-Are you a simp for Alucard? A devotee of Trevor's stubble? Or perhaps you're here for the **Motherhood Supremacy**? You've come to the right crypt.
+This repository exists because somebody looked at a gothic horror saga full of vampire politics, intergenerational trauma, church corruption, doomed love, immaculate cheekbones, and one profoundly dangerous supply of Belmont genetics, and decided that what the world needed was a ranked scoreboard.
 
-## 🦇 Features
+That somebody was correct.
 
-- **Real-Time Dehydration**: Watch the thirst levels rise in real-time. It's like a stock market, but instead of money, it's just pure, unadulterated longing.
-- **The MILF Council**: Dedicated tracking for the absolute legends **Lisa Tepes**, **Tera**, and **Julia Belmont**. Because let's be honest, they carry the emotional weight (and the thirst) of the entire series.
-- **Gothic Aesthetics**: Styled with Tailwind CSS so sharp it could kill a night creature.
-- **Vampire-Approved**: Tested by a council of ancient vampires who found it "mildly amusing before they tried to eat the developer."
-- **Zero Holy Water**: This app is 100% safe for vampires, dhampirs, and speakers. (Belmonts use at your own risk, we know you're just here for the beer).
+## What This Is
 
-## 🤱 THE MILF CORNER (USER REQUESTED™ & ABSOLUTELY UNHINGED) 🤱
+- A faction-sorted character board for the original show and Nocturne.
+- A live vote counter with optional Firebase sync.
+- A local fallback mode for when Firebase is not configured.
+- A Castlevania Wiki-linked roster so every character entry has an actual reference.
+- A shrine to terrible decisions, exquisite character design, and preventable emotional damage.
 
-**⚠️ WARNING: EXTREME LEVELS OF MATERNAL SUPREMACY DETECTED. PROCEED WITH CAUTION OR PREPARE TO BE ADOPTED.**
+## The Tera Incident
 
-We have officially surrendered to the absolute, reality-shattering power of the mothers in this franchise. The MILF Council has convened, and the verdict is: **WE ARE ALL SIMPS.**
+This project would be dishonest if it did not address the event that helped spiritually validate its existence.
 
-- **🧬 Lisa Tepes (The Catalyst of Chaos)**: The woman who humanized the King of Vampires. A doctor, a scholar, and the literal reason the world almost ended. If your wife doesn't inspire you to commit global genocide, is she even your wife? 10/10 would let her experiment on my soul. **MOTHERHOOD SUPREMACY INCARNATE.**
-- **🔥 Tera Renard (The Internet-Breaker)**: The Speaker mother who caused a worldwide server outage the moment she appeared on screen. Human? Vampire? Doesn't matter. We are all just moths to her divine, protective flame. The official artbook confirms she's a Renard, but the fandom confirms she's **THE MOMMY OF ALL MOMMIES.**
-    - **🚨 THE TERA INCIDENT (HISTORICAL EVENT) 🚨**: We must never forget the day an official animator posted *that* pin-up art and the internet literally folded in on itself. Servers smoked, Twitter crashed, and the collective blood pressure of the fandom reached levels previously thought impossible by modern medicine. It wasn't just art; it was a tactical strike on our sanity. We are still recovering.
-    - **🦇 THE ELVIRA PROTOCOL 🦇**: As if the initial strike wasn't enough, the same animator released a **Tera as Elvira** parody. This resulted in a 200% increase in global thirst levels, a shortage of smelling salts, and several fans reporting that they had "forgotten how to breathe." It was the ultimate gothic crossover nobody asked for but everyone deserved. Thirst levels: **BEYOND MEASURABLE.**
-- **⚔️ Julia Belmont (The Legendary Warrior Mom)**: She didn't just fight a vampire messiah's priest; she did it while being a peak Belmont. The ultimate "I'm not mad, I'm just disappointed" energy, except the disappointment comes with a whip and holy magic. **LEGENDARY THIRST LEVELS: CRITICAL.**
+An animator associated with Castlevania: Nocturne made pinup Tera art.
 
-*Note: If you find yourself suddenly wanting to clean your room or eat your vegetables after reading this, that's just the MILF energy radiating through the screen. Embrace it.*
+That was not a minor fandom moment. That was a systems event.
 
-## 🧪 THE THIRST ARCHIVES: DEEP LORE & DEEPER DESPERATION 🧪
+That was the kind of image drop that makes a normal person close the tab, stare into middle distance, and ask whether mankind was ever supposed to wield this much power.
 
-**"What is a man? A miserable little pile of secrets... and a lot of thirst."**
+So yes, this README is zeroing in on that.
 
-- **💇‍♂️ Alucard's Hair Care Routine**: 90% sadness, 10% magic, 0% shampoo. He just wakes up like that. The secret to his volume is the sheer weight of his daddy issues. If you vote for Alucard, you're not just voting for a dhampir; you're voting for a 300-year-old teenager who needs a hug and a haircut (but don't you dare touch those golden locks).
-- **🍺 Trevor's Beer-to-Thirst Ratio**: For every pint of ale Trevor drinks, his thirst levels among the fandom increase by 15%. It's a scientific anomaly. He hasn't bathed since the 1400s, yet he's still a top-tier husbando. Explain that, science.
-- **💅 Carmilla's "Gaslight, Gatekeep, Girlboss" Award**: She didn't just want to rule the world; she wanted to do it in high heels while yelling at her sisters. We stan a queen who knows exactly how to manipulate a forge master into building her an army of nightmares.
-- **🛡️ Striga's "Death by Snu Snu" Warning**: If you vote for Striga, you are acknowledging that you want to be stepped on by a 7-foot-tall vampire in Day Armor. We've seen the logs. We know what you want. And honestly? Valid.
-- **🎭 Saint Germain's Infinite Corridor of Simping**: He's not looking for "The Corridor," he's looking for a way to escape the sheer amount of thirst this app generates. He's seen every timeline, and in all of them, you're still thirsty.
+Because once official-adjacent Tera pinup art enters the cultural bloodstream, you are no longer building a normal fan app. You are managing fallout.
 
-## 📊 THIRST LEVEL CLASSIFICATION 📊
+And from that fallout rose a simple principle:
 
-| Level | Description | Recommended Action |
-| :--- | :--- | :--- |
-| **1. Hydrated** | You just started the show. You think the art is nice. | Keep watching. It gets worse. |
-| **2. Dehydrated** | You've noticed Alucard's hair. You've paused on a frame of Trevor. | Buy a water bottle. You'll need it. |
-| **3. Parched** | You're actively searching for "Castlevania MILF" on Twitter. | Seek professional help (or just keep scrolling). |
-| **4. Critical** | You've voted 100 times for Tera Renard. You want to be a Night Creature just to be near Isaac. | You are beyond saving. Welcome to the Council. |
-| **5. BELMONT TIER** | You've reached a state of pure, unadulterated thirst that can only be quenched by a 300-year-old vampire's tears. | You are the reason this app exists. |
+Tera Renard was never going to be treated like a background data row.
 
-## 🛠️ Tech Stack
+Neither were Lisa Tepes or Julia Belmont.
 
-- **React 19**: Because even ancient vampires need modern UI.
-- **Express + Vite**: The ultimate full-stack duo, like Trevor and Sypha but with less bickering.
-- **Firebase**: Storing your thirst in the cloud, where Dracula can't reach it.
-- **Motion**: For those smooth, bat-like transitions.
-- **Lucide React**: Icons so crisp they'll make your fangs ache.
+Hence the MILF badge.
 
-## 🚀 Getting Started
+## Current Priorities
 
-1. **Clone the Crypt**:
-   ```bash
-   git clone https://github.com/your-username/castlevania-thirst-counter.git
-   ```
-2. **Summon Dependencies**:
-   ```bash
-   npm install
-   ```
-3. **Ignite the Forge**:
-   ```bash
-   npm run dev
-   ```
-4. **Open your browser** to `http://localhost:3000` and prepare to witness the thirst.
+This app currently focuses on:
 
-## 📜 License
+- Original-series characters.
+- Nocturne characters.
+- Faction ordering instead of random roster sprawl.
+- Character cards with direct Castlevania Wiki links.
+- The correct level of reverence for beautiful, dangerous people making horrible life choices.
 
-Licensed under the **Dracula's Curse License**. You are free to use this code, but if you do, a very handsome dhampir might show up at your house to complain about your coding style.
+## Roster Logic
 
----
+Characters are grouped by show, then ordered by faction.
 
-*Disclaimer: No Belmonts were harmed in the making of this app. One night creature was slightly inconvenienced. Lisa, Tera, and Julia are best girls.*
+Original-series examples:
+- Belmont Allies
+- Tepes Family
+- Forgemasters
+- Styrian Sisterhood
+- Dracula's War Council
 
-**P.S. If you're reading this, you're already too far gone. Just accept the thirst. It's warmer in the crypt anyway.**
+Nocturne examples:
+- Belmont Clan
+- Revolutionaries
+- Renard Household
+- Church
+- Independent Vampires
+- Bathory Court
+
+This means the board does not read like a wiki dump. It reads like a curated gallery of faction-based bad decisions.
+
+## The MILF Council
+
+Some truths do not require debate.
+
+The MILF badge currently applies to:
+- Lisa Tepes
+- Tera Renard
+- Tera Renard (Vampire)
+- Julia Belmont
+
+This is not arbitrary.
+
+This is governance.
+
+## Tech Stack
+
+- React 19
+- TypeScript
+- Vite
+- Express
+- Firebase
+- Motion
+- Lucide React
+- Tailwind CSS
+
+The code is modern.
+The premise is deeply unserious.
+The execution is more disciplined than the premise deserves.
+
+## Getting Started
+
+1. Clone the crypt:
+
+```bash
+git clone https://github.com/NobleStripes/Castlevania-Thirst.git
+cd Castlevania-Thirst
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the app:
+
+```bash
+npm run dev
+```
+
+4. Open the board:
+
+```text
+http://localhost:3000
+```
+
+## Firebase
+
+Firebase is optional.
+
+If the `VITE_FIREBASE_*` variables in [.env.example](.env.example) are empty, the app runs in local mode and stores vote state in the browser.
+
+If Firebase is configured, the app can:
+- load characters from Firestore
+- sync votes in real time
+- support sign-in based voting
+- support admin sync and edits
+
+## Scripts
+
+- `npm run dev`: Start the Express + Vite development server.
+- `npm run build`: Build the production client bundle.
+- `npm run preview`: Preview the built app.
+- `npm run lint`: Run TypeScript checks.
+- `npm run clean`: Remove the `dist` folder.
+
+## Data Notes
+
+Seed character data lives in [src/data/initialCharacters.ts](src/data/initialCharacters.ts).
+
+Each entry includes:
+- name
+- faction
+- description
+- wiki URL
+- image URL
+- optional badge
+- series
+
+This project no longer depends on Gemini, random generated blurbs, or mystery links that die on contact.
+
+It is now a cleaner, better-documented machine for ranking beautiful disasters.
+
+## Important Truths
+
+- Dracula remains one of the most elegant problems ever animated.
+- Carmilla still weaponizes posture better than most armies weaponize steel.
+- Olrox has his own gravitational field.
+- Mizrak is proof that church-affiliated characters can still be an issue.
+- The existence of Tera pinup art means history forked and this repository lives on the cursed branch.
+
+## License
+
+Use the code if you want.
+
+Just understand that this repository was built in full awareness that the Castlevania franchise keeps producing people who are too dangerous to be this hot, and yet here we all are.
