@@ -192,6 +192,9 @@ It is now a disciplined registry of vampires, hunters, revolutionaries, church-a
 - Isaac could philosophize you to death while dressed better than everyone present.
 - Olrox is not a man so much as a jeweled incident report.
 - Mizrak confirms the church was also contributing to the global instability index.
+- Tera survived Erzsebet-level trauma, arrived in Machecoul needing sanctuary, and still chose the local abbot as her emotional investment strategy.
+- Emmanuel preached holy vows by day, broke celibacy by night, then picked Church reputation over fatherhood and settled into premium sperm-donor deadbeat form.
+- Together, they made Maria Renard and ran the "your father is dead" cover story until Emmanuel detonated the truth mid-argument in front of her.
 
 ## License
 
